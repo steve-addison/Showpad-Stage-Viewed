@@ -1,5 +1,5 @@
 trigger stageviewed on ShowpadForSF__Showpad_Content_View__c (before insert) {
-    //Before Showpad Content View record is inserted, take snapshot of current opp stage. I want to see what stage a file was viewed in.
+    //Before Showpad Content View record is inserted, take snapshot of current opp stage.
     for(ShowpadForSF__Showpad_Content_View__c scv : Trigger.New) {
         scv.Stage_Viewed__c = scv.Opportunity_Stage__c;
     }   
